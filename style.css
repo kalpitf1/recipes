@@ -1,7 +1,18 @@
+.cormorant-upright-regular {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cormorant-upright-bold {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
 body {
-    font-family: Arial, sans-serif;
     background-color: #FFA07A;
-    color: #fff;
+    color: #ece7e7;
     margin: 0;
     padding: 0;
 }
@@ -45,10 +56,13 @@ body {
 }
 
 .flavor-selector button {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 400;
+    font-style: normal;
     background: none;
     border: none;
     color: #fff;
-    font-size: 1em;
+    font-size: 1.1em;
     margin: 0 10px;
     padding: 5px 10px;
     cursor: pointer;
