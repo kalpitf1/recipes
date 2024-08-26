@@ -11,17 +11,23 @@
 }
 
 body {
-    background-color: #FFA07A;
     color: #ece7e7;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 800px;
+    height: 100vh;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    flex: 1;
 }
 
 .title {
@@ -43,7 +49,8 @@ body {
 }
 
 .bowl-image {
-    max-width:100%; height:auto;
+    max-width:100%;
+    height:auto;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -78,7 +85,6 @@ body {
 .navigation {
     display: flex;
     justify-content: space-between;
-    max-width: 300px;
     margin: 0 auto;
 }
 

@@ -11,17 +11,21 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title cormorant-upright-bold"></h1>
-      <p class="description cormorant-upright-regular"></p>
-      <div class="flavor-selector">
-        <!-- added dynamically -->
+      <div class="top">
+        <h1 class="title cormorant-upright-bold"></h1>
+        <p class="description cormorant-upright-regular"></p>
       </div>
-      <div class="image-container">
-        <img src="/papaya.png" alt="Papaya Bowl" class="bowl-image">
-      </div>
-      <div class="navigation">
-        <button class="prev">&lt;</button>
-        <button class="next">&gt;</button>
+      <div class="bottom">
+        <div class="flavor-selector">
+          <!-- added dynamically -->
+        </div>
+        <div class="navigation">
+          <button class="prev">&lt;</button>
+          <div class="image-container">
+            <img src="/papaya.png" alt="Papaya Bowl" class="bowl-image">
+          </div>
+          <button class="next">&gt;</button>
+        </div>
       </div>
     </div>
     <script type="module" src="script.js"></script>
