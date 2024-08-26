@@ -20,7 +20,6 @@ body {
     height: 100vh;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -102,20 +101,15 @@ body {
 }
 
 @media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
     h1 {
         font-size: 2em;
     }
 
-    .image-container {
-        width: 200px;
-        height: 200px;
-    }
-
     .flavor-selector button {
         margin: 5px;
+    }
+
+    .prev, .next {
+        display: none;
     }
 }
