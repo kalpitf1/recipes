@@ -45,7 +45,7 @@ function initializeBowlSelector() {
         const currentBowl = bowls[currentBowlIndex];
         title.textContent = `${currentBowl.name}`;
         description.textContent = currentBowl.description;
-        bowlImage.src = `${currentBowl.name.toLowerCase()}.png`;
+        bowlImage.src = `${currentBowl.name.toLowerCase()}_large.png`;
         bowlImage.alt = `${currentBowl.name}`;
         document.body.style.background = currentBowl.bgcolor;
 
