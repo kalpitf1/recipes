@@ -1,3 +1,9 @@
+.cormorant-upright-light {
+    font-family: "Cormorant Upright", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+
 .cormorant-upright-regular {
     font-family: "Cormorant Upright", serif;
     font-weight: 400;
@@ -18,15 +24,16 @@ body {
 
 .container {
     height: 100vh;
-    max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    display: flex;
+    display: grid;
     flex-direction: column;
 }
 
 .top {
     flex: 1;
+    max-width: 600px;
+    justify-self: center;
 }
 
 .title {
@@ -42,20 +49,15 @@ body {
 
 .image-container {
     position: relative;
-    margin: 0 auto;
 }
 
 .bowl-image {
-    max-width:100%;
-    height:auto;
     border-radius: 50%;
     object-fit: cover;
+    max-height: 500px;
 }
 
 .flavor-selector {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
@@ -82,25 +84,42 @@ body {
 .navigation {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    align-items: center;
 }
 
 .navigation button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2em;
-    cursor: pointer;
     transition: all 0.3s ease;
+    margin: 0 20px;
+    outline: 0.5px solid #ece7e7;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    background: rgba(256, 256, 256, 0.2);
+    cursor: pointer;
+    font-size: 2em;
+    color: #ece7e7;
 }
 
 .navigation button:hover {
     transform: scale(1.2);
 }
 
+@media (min-width: 1024px) {
+    .bottom {
+        margin: 0 40px;
+    }
+}
+
 @media (max-width: 600px) {
-    .image-container {
-        width: 90%;
+    .top, .bottom {
+        max-width: 90vw;
+        justify-self: center;
+    }
+
+    .bowl-image {
+        width: 90vw;
     }
 
     h1 {
