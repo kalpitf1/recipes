@@ -10,7 +10,9 @@ let currentBowlIndex = 0;
 
 function initializeBowlSelector() {
     const flavorSelector = document.querySelector('.flavor-selector');
-    const bowlImage = document.querySelector('.bowl-image');
+    const bowlImageSourceWebP = document.querySelector('.bowl-image-webp');
+    const bowlImageSourcePNG = document.querySelector('.bowl-image-png');
+    const bowlImageFallback = document.querySelector('.bowl-image');
     const title = document.querySelector('.title');
     const description = document.querySelector('.description');
     const prevButton = document.querySelector('.prev');
@@ -45,8 +47,10 @@ function initializeBowlSelector() {
         const currentBowl = bowls[currentBowlIndex];
         title.textContent = `${currentBowl.name}`;
         description.textContent = currentBowl.description;
-        bowlImage.src = `${currentBowl.name.toLowerCase()}_large.png`;
-        bowlImage.alt = `${currentBowl.name}`;
+        bowlImageSourceWebP.srcset = `${currentBowl.name.toLowerCase()}_1000.webp`;
+        bowlImageSourcePNG.srcset = `${currentBowl.name.toLowerCase()}_1000.png`;
+        bowlImageFallback.src = `${currentBowl.name.toLowerCase()}_1000.png`;
+        bowlImageFallback.alt = `${currentBowl.name}`;
         document.body.style.background = currentBowl.bgcolor;
 
         // Update active state of flavor buttons
