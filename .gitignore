@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Previously used image files
+apple.png
+apple_large.png
+kiwi.png
+kiwi_large.png
+papaya.png
+papaya_large.png
+pomegranate.png
+pomegranate_large.png
+strawberry-banana.png
+strawberry-banana_large.png
