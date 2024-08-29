@@ -29,9 +29,24 @@ function initializeBowlSelector() {
     // Initialize with the first bowl
     updateBowlDisplay();
 
-    // Add event listeners for navigation buttons
-    prevButton.addEventListener('click', () => navigateBowl(-1));
-    nextButton.addEventListener('click', () => navigateBowl(1));
+    // Add event listeners for navigation buttons, bowl image and text animations
+    prevButton.addEventListener('click', () => {
+        navigateBowl(-1);
+        animateAntiClockwise();
+        animateText();
+    });
+    nextButton.addEventListener('click', () => {
+        navigateBowl(1);
+        animateClockwise();
+        animateText();
+    });
+    const buttons = flavorSelector.querySelectorAll('button');
+    buttons.forEach((button, ) => {
+        button.addEventListener('click', () => {
+            animateText();
+            animateClockwise();
+        });
+    });
 
     function selectBowl(index) {
         currentBowlIndex = index;
@@ -58,6 +73,29 @@ function initializeBowlSelector() {
         buttons.forEach((button, index) => {
             button.classList.toggle('active', index === currentBowlIndex);
         });
+    }
+
+    function animateClockwise() {
+        bowlImageFallback.classList.add("spinner-class-clockwise");
+        setTimeout(() => {
+            bowlImageFallback.classList.remove("spinner-class-clockwise");
+        }, 1000);
+    }
+
+    function animateAntiClockwise() {
+        bowlImageFallback.classList.add("spinner-class-anticlockwise");
+        setTimeout(() => {
+            bowlImageFallback.classList.remove("spinner-class-anticlockwise");
+        }, 1000);
+    }
+
+    function animateText() {
+        for (const item of [description, title]) {
+            item.classList.add("fading-text");
+            setTimeout(() => {
+                item.classList.remove("fading-text");
+            }, 1000);
+        }
     }
 }
 

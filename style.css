@@ -1,3 +1,4 @@
+/* font styles */
 .cormorant-upright-light {
     font-family: "Cormorant Upright", system-ui;
     font-weight: 300;
@@ -16,6 +17,7 @@
     font-style: italic;
 }
 
+/* common styles */
 body {
     color: #ece7e7;
     margin: 0;
@@ -109,6 +111,34 @@ body {
     transform: scale(1.2);
 }
 
+/* animation styles */
+.fading-text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.spinner-class-clockwise {
+    animation: rotate 1s;
+}
+
+.spinner-class-anticlockwise {
+    animation: rotate 1s reverse;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+
+/* responsive styles */
 @media (min-width: 1024px) {
     .bottom {
         margin: 0 40px;
