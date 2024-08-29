@@ -116,9 +116,19 @@ body {
 }
 
 @media (max-width: 600px) {
+    .container {
+        display: flex;
+        align-items: center;
+        max-height: 90vh;
+    }
+
     .top, .bottom {
         max-width: 90vw;
         justify-self: center;
+    }
+
+    .bottom {
+        margin-bottom: 20px;
     }
 
     .bowl-image {
