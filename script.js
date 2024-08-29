@@ -51,7 +51,7 @@ function initializeBowlSelector() {
         bowlImageSourcePNG.srcset = `${currentBowl.name.toLowerCase()}_1000.png`;
         bowlImageFallback.src = `${currentBowl.name.toLowerCase()}_1000.png`;
         bowlImageFallback.alt = `${currentBowl.name}`;
-        document.body.style.background = currentBowl.bgcolor;
+        document.body.style.backgroundColor = currentBowl.bgcolor;
 
         // Update active state of flavor buttons
         const buttons = flavorSelector.querySelectorAll('button');
