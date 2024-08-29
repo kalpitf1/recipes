@@ -56,6 +56,8 @@ body {
     border-radius: 50%;
     object-fit: cover;
     max-height: 500px;
+    -webkit-filter: drop-shadow(5px 5px 10px #222);
+    filter: drop-shadow(5px 5px 15px #222);
 }
 
 .flavor-selector {
