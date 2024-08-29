@@ -119,7 +119,6 @@ body {
     .container {
         display: flex;
         align-items: center;
-        max-height: 90vh;
     }
 
     .top, .bottom {
@@ -128,7 +127,11 @@ body {
     }
 
     .bottom {
-        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    .description {
+        margin: 0;
     }
 
     .bowl-image {
