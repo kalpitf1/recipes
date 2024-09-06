@@ -21,10 +21,40 @@
   <body>
     <div class="container">
       <div class="top">
-        <div>
+        <div class="title-and-modal">
           <h1 class="title cormorant-upright-bold"></h1>
-          <!-- TODO: Modal -->
-          <!-- <button>Recipe</button> -->
+          <button class="modal-button cormorant-upright-light">Recipe</button>
+          <div class="modal">
+            <div class="modal-content cormorant-upright-regular">
+              <span class="close">&times;</span>
+              <div class="tabs">
+                <button class="tab-button cormorant-upright-regular active" data-tab="ingredients">Ingredients</button>
+                <button class="tab-button cormorant-upright-regular" data-tab="recipe">Recipe</button>
+              </div>
+              <div id="ingredients" class="tab-content active">
+                <ul>
+                  <li>1 tbsp rolled oats</li>
+                  <li>1/2 tbsp cocoa powder (unsweetened)</li>
+                  <li>1 tsp vanilla extract</li>
+                  <li>3 eggs</li>
+                  <li>1 tbsp milk (regular or any plant-based milk of choice)</li>
+                  <li>1 tbsp honey</li>
+                  <li>1/2 to 1 cup fruits of choice (papaya, strawberries, bananas, etc.)</li>
+                </ul>
+              </div>
+              <div id="recipe" class="tab-content">
+                <ol>
+                  <li>Mix dry ingredients (oats, cocoa, vanilla) until no clumps remain.</li>
+                  <li>Add eggs and milk, mix until homogenous.</li>
+                  <li>Cook in non-stick pan for 5-10 mins, stirring until thick like pudding consistency. Cool briefly.</li>
+                  <li>Stir in honey.</li>
+                  <li>Top with ½-1 cup of fruits. Time to dig in!</li>
+                </ol>
+              </div>
+              <br>
+              <div class="cormorant-upright-bold">Glory be to Lord Nikhil / Lady Isha</div>
+            </div>
+          </div>
         </div>
         <p class="description cormorant-upright-regular"></p>
       </div>
@@ -46,9 +76,6 @@
           </div>
           <button class="next cormorant-upright-light">&gt;</button>
         </div>
-        <!-- TODO: Thanks -->
-        <!-- <div class="credits cormorant-upright-light">Glory be to Lord Nikhil / Lady Isha</div> -->
-        <!-- <div class="credits cormorant-upright-light">Glory be to N / I</div> -->
       </div>
     </div>
     <script type="module" src="script.js"></script>

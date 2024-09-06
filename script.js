@@ -24,6 +24,32 @@ function initializeBowlSelector() {
     const startAngle = 180; // Starting angle in degrees
     const angleStep = 180 / (totalButtons - 1); // Angle step based on the number of buttons
 
+    // Get the modal
+    var modal = document.querySelector('.modal');
+
+    // Get the button that opens the modal
+    var btn = document.querySelector('.modal-button');
+
+    // Get the <span> element that closes the modal
+    var span = document.querySelector('.close');
+
+    // Open the modal when the button is clicked
+    btn.addEventListener('click', () => {
+        modal.style.display = "block";
+    });
+
+    // Close the modal when the "x" (span) is clicked
+    span.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    // Close the modal when clicking outside the modal
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
     // Create flavor selector mobile buttons
     bowls.forEach((bowl, index) => {
         const button = document.createElement('button');
@@ -102,6 +128,7 @@ function initializeBowlSelector() {
         bowlImageFallback.src = `${currentBowl.name.toLowerCase()}_1000.png`;
         bowlImageFallback.alt = `${currentBowl.name}`;
         document.body.style.backgroundColor = currentBowl.bgcolor;
+        document.querySelector('.modal-content').style.backgroundColor = currentBowl.bgcolor;
 
         // Update active state of flavor buttons
         const buttons = flavorSelector.querySelectorAll('button');
@@ -171,6 +198,28 @@ function preloadImages(array) {
     }
 }
 
+function openTab() {
+    const tabs = document.querySelectorAll('.tab-button');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabId = tab.getAttribute('data-tab');
+
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // Update active tab button
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+        });
+    });
+}
+
 // Initialize the bowl selector when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initializeBowlSelector);
 document.addEventListener('DOMContentLoaded', preloadImages(["apple_1000.webp", "strawberry-banana_1000.webp", "kiwi_1000.webp", "pomegranate_1000.webp"]));
+document.addEventListener('DOMContentLoaded', openTab);
