@@ -21,24 +21,34 @@
   <body>
     <div class="container">
       <div class="top">
-        <h1 class="title cormorant-upright-bold"></h1>
+        <div>
+          <h1 class="title cormorant-upright-bold"></h1>
+          <!-- TODO: Modal -->
+          <!-- <button>Recipe</button> -->
+        </div>
         <p class="description cormorant-upright-regular"></p>
       </div>
       <div class="bottom">
-        <div class="flavor-selector">
-          <!-- added dynamically -->
-        </div>
+        <div class="flavor-selector-mobile"></div>
         <div class="navigation">
           <button class="prev cormorant-upright-light">&lt;</button>
-          <div class="image-container">
-            <picture>
-              <source class="bowl-image-webp" type="image/webp">
-              <source class="bowl-image-png" type="image/png">
-              <img class="bowl-image">
-            </picture>
+          <div class="invisible-circle flavor-selector">
+            <div class="image-container">
+              <div class="dot"></div>
+              <div class="inner-circle">
+                <picture>
+                  <source class="bowl-image-webp" type="image/webp">
+                  <source class="bowl-image-png" type="image/png">
+                  <img class="bowl-image">
+                </picture>
+              </div>
+            </div>
           </div>
           <button class="next cormorant-upright-light">&gt;</button>
         </div>
+        <!-- TODO: Thanks -->
+        <!-- <div class="credits cormorant-upright-light">Glory be to Lord Nikhil / Lady Isha</div> -->
+        <!-- <div class="credits cormorant-upright-light">Glory be to N / I</div> -->
       </div>
     </div>
     <script type="module" src="script.js"></script>

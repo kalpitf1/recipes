@@ -10,6 +10,7 @@ let currentBowlIndex = 0;
 
 function initializeBowlSelector() {
     const flavorSelector = document.querySelector('.flavor-selector');
+    const flavorSelectorMobile = document.querySelector('.flavor-selector-mobile');
     const bowlImageSourceWebP = document.querySelector('.bowl-image-webp');
     const bowlImageSourcePNG = document.querySelector('.bowl-image-png');
     const bowlImageFallback = document.querySelector('.bowl-image');
@@ -18,10 +19,40 @@ function initializeBowlSelector() {
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
 
-    // Create flavor selector buttons
+    const totalButtons = bowls.length;
+    const radius = 50; // Percentage radius for responsive design
+    const startAngle = 180; // Starting angle in degrees
+    const angleStep = 180 / (totalButtons - 1); // Angle step based on the number of buttons
+
+    // Create flavor selector mobile buttons
     bowls.forEach((bowl, index) => {
         const button = document.createElement('button');
         button.textContent = bowl.name;
+
+        button.addEventListener('click', () => selectBowl(index));
+        flavorSelectorMobile.appendChild(button);
+    });
+
+    // Create flavor selector buttons
+    bowls.forEach((bowl, index) => {
+        const button = document.createElement('button');
+        button.classList.add("flavor-button")
+        button.textContent = bowl.name;
+
+        // Calculate the angle for each button
+        const angle = startAngle + index * angleStep;
+        const angleInRadians = angle * (Math.PI / 180);
+
+        // Calculate top and left using cos and sin for polar coordinates
+        const left = 50 + radius * Math.cos(angleInRadians); // Horizontal position
+        const top = 50 + radius * Math.sin(angleInRadians);  // Vertical position
+
+        // Set the calculated position and rotation
+        button.style.left = `${left}%`;
+        button.style.top = `${top}%`;
+        const rotation = angle + 90; // Rotate to face center
+        button.style.transform += `translate(-50%, -50%) rotate(${rotation}deg)`;
+
         button.addEventListener('click', () => selectBowl(index));
         flavorSelector.appendChild(button);
     });
@@ -40,11 +71,15 @@ function initializeBowlSelector() {
         animateClockwise();
         animateText();
     });
-    const buttons = flavorSelector.querySelectorAll('button');
-    buttons.forEach((button, ) => {
-        button.addEventListener('click', () => {
-            animateText();
-            animateClockwise();
+
+    const selectors = [flavorSelector, flavorSelectorMobile];
+    selectors.forEach((x) => {
+        const buttons = x.querySelectorAll('button');
+        buttons.forEach((button, ) => {
+            button.addEventListener('click', () => {
+                animateText();
+                animateClockwise();
+            });
         });
     });
 
@@ -73,6 +108,23 @@ function initializeBowlSelector() {
         buttons.forEach((button, index) => {
             button.classList.toggle('active', index === currentBowlIndex);
         });
+
+        // Draw a dot on the image-container border next to the active flavor-button
+        const dot = document.querySelector('.dot');
+        const radius = 50; // Percentage radius for responsive design
+        const startAngle = 180; // Starting angle in degrees
+        const angleStep = 180 / (totalButtons - 1); // Angle step based on the number of buttons
+        // Calculate the angle for each button
+        const angle = startAngle + currentBowlIndex * angleStep;
+        const angleInRadians = angle * (Math.PI / 180);
+
+        // Calculate top and left using cos and sin for polar coordinates
+        const left = 50 + radius * Math.cos(angleInRadians); // Horizontal position
+        const top = 50 + radius * Math.sin(angleInRadians);  // Vertical position
+
+        // Set the calculated position and rotation
+        dot.style.left = `${left}%`;
+        dot.style.top = `${top}%`;
     }
 
     function animateClockwise() {
